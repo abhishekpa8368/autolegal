@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_autolegal_template,access.autolegal.template,model_autolegal_template,,1,1,1,1
+access_autolegal_document,access.autolegal.document,model_autolegal_document,,1,1,1,1

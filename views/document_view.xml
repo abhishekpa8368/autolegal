@@ -1,0 +1,52 @@
+<odoo>
+  <!-- Template Form View -->
+  <record id="view_autolegal_template_form" model="ir.ui.view">
+    <field name="name">autolegal.template.form</field>
+    <field name="model">autolegal.template</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <field name="name"/>
+          <field name="doc_type"/>
+          <field name="content"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <!-- Document Form View -->
+  <record id="view_autolegal_document_form" model="ir.ui.view">
+    <field name="name">autolegal.document.form</field>
+    <field name="model">autolegal.document</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <field name="name"/>
+          <field name="template_id"/>
+          <field name="partner_id"/>
+          <field name="validated"/>
+          <field name="filled_content"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <!-- Template Action -->
+  <record id="action_autolegal_template" model="ir.actions.act_window">
+    <field name="name">Templates</field>
+    <field name="res_model">autolegal.template</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Document Action -->
+  <record id="action_autolegal_document" model="ir.actions.act_window">
+    <field name="name">Documents</field>
+    <field name="res_model">autolegal.document</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <!-- Menu Items -->
+  <menuitem id="autolegal_root_menu" name="AutoLegal"/>
+  <menuitem id="autolegal_menu_templates" name="Templates" parent="autolegal_root_menu" action="action_autolegal_template"/>
+  <menuitem id="autolegal_menu_documents" name="Documents" parent="autolegal_root_menu" action="action_autolegal_document"/>
+</odoo>
